@@ -3,7 +3,7 @@
   <groupId>Hibernate5Annotation</groupId>
   <artifactId>Hibernate5Annotation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+    <packaging>war</packaging>
   <repositories>
 		<repository>
 			<id>prime-repo</id>

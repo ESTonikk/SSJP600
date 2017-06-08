@@ -5,8 +5,6 @@ import org.hibernate.SessionFactory;
 
 import net.ssjp.model.*;
 /**
- * @author Deepak Kumar 
- * Web: http://www.roseindia.net
  */
 public class CreateData {
 	public static void main(String[] args) throws Exception {
