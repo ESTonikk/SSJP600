@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+    <h:head>
+        <title>Title</title>
+ <style>
+ .ui-layout-north {
+    z-index:40 !important;
+    overflow:visible !important;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow:visible !important;
+}
+ </style>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true" id="menubarTop">
+          <p:layoutUnit position="north" header="Top"> 
+			<h:form>
+	             <ui:include src="/templates/menubar.xhtml" id="menubar"/>
+	        </h:form>
+         </p:layoutUnit> 
+        
+        <!-- 
+       		<p:layoutUnit position="north" size="200" header="Top" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="north unit content." />
+            </p:layoutUnit>
+             -->
+            <p:layoutUnit position="west" size="100" header="west" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="west unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="South unit content." />
+            </p:layoutUnit>
+
+            
+
+            <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
+                <h:outputText value="Right unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="content">Put default content here, if any.</ui:insert>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
