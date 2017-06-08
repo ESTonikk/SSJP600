@@ -26,7 +26,13 @@
 	    <artifactId>hibernate-core</artifactId>
 	    <version>5.2.8.Final</version>
 	  </dependency>
-
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+<dependency>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    <version>1.2</version>
+</dependency>
+		
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
 			<artifactId>all-themes</artifactId>
