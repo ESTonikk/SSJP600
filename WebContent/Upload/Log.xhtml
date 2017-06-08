@@ -11,7 +11,8 @@
  
     <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
  
-    <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="false" />
+    <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="false" update="messages"/>
+    
 </h:form>
      </ui:define>
 </ui:composition>
