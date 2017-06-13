@@ -105,7 +105,7 @@ public class ProcessData extends Data implements Serializable, Comparable<Proces
 	private String HeisskanalRegelkreis8;
 	
 	private String Einspritzarbeit;
-	private String Hüllkurve;
+	private String Huellkurve;
 	private String SchraubImpulseKernA;
 	private String SchraubImpulseKernB;
 	private String Oeltemperatur;
@@ -1094,16 +1094,16 @@ public class ProcessData extends Data implements Serializable, Comparable<Proces
 		Einspritzarbeit = einspritzarbeit;
 	}
 	/**
-	 * @return the hüllkurve
+	 * @return the Huellkurve
 	 */
-	public String getHüllkurve() {
-		return Hüllkurve;
+	public String getHuellkurve() {
+		return Huellkurve;
 	}
 	/**
-	 * @param hüllkurve the hüllkurve to set
+	 * @param Huellkurve the Huellkurve to set
 	 */
-	public void setHüllkurve(String hüllkurve) {
-		Hüllkurve = hüllkurve;
+	public void setHuellkurve(String Huellkurve) {
+		Huellkurve = Huellkurve;
 	}
 	/**
 	 * @return the schraubImpulseKernA
@@ -1190,7 +1190,7 @@ public class ProcessData extends Data implements Serializable, Comparable<Proces
 				+ ", HeisskanalRegelkreis5=" + HeisskanalRegelkreis5 + ", HeisskanalRegelkreis6="
 				+ HeisskanalRegelkreis6 + ", HeisskanalRegelkreis7=" + HeisskanalRegelkreis7
 				+ ", HeisskanalRegelkreis8=" + HeisskanalRegelkreis8 + ", Einspritzarbeit=" + Einspritzarbeit
-				+ ", Hüllkurve=" + Hüllkurve + ", SchraubImpulseKernA=" + SchraubImpulseKernA + ", SchraubImpulseKernB="
+				+ ", Huellkurve=" + Huellkurve + ", SchraubImpulseKernA=" + SchraubImpulseKernA + ", SchraubImpulseKernB="
 				+ SchraubImpulseKernB + ", Oeltemperatur=" + Oeltemperatur + ", EnergiePumpenantrieb="
 				+ EnergiePumpenantrieb + ", EnergieHeizzonen=" + EnergieHeizzonen + ", EnergieHeisskanaele="
 				+ EnergieHeisskanaele + ", EnergieGesamt=" + EnergieGesamt + ", EinspritzdruckMax=" + EinspritzdruckMax

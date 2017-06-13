@@ -14,11 +14,13 @@ public class LogUploadview extends FileUploadView{
 	
 	public LogUploadview(UploadedFile file){
 		super(file);
+		System.out.println("test");
 	}
 	
 	
 	@Override
 	public void upload() {
+		System.out.println("test");
 		// TODO Auto-generated method stub
         if(getFile() != null) {
         	System.out.println(42342);
