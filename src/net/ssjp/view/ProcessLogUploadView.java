@@ -3,13 +3,15 @@ package net.ssjp.view;
 import java.io.IOException;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.model.UploadedFile;
 
 import net.ssjp.controller.ProcessLogUploadController;
 
-public class ProcessLogUploadView extends FileUploadView{
+@ManagedBean
+public class ProcessLogUploadView extends FileUploaderView{
 
 	public ProcessLogUploadView(UploadedFile file){
 		super(file);

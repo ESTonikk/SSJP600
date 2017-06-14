@@ -3,13 +3,15 @@ package net.ssjp.view;
 import java.io.IOException;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.model.UploadedFile;
 
 import net.ssjp.controller.RecipeeUploadController;
 
-public class RecipeeUploadView extends FileUploadView{
+@ManagedBean
+public class RecipeeUploadView extends FileUploaderView{
 
 	public RecipeeUploadView(UploadedFile file){
 		super(file);
