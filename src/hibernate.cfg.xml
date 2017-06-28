@@ -6,9 +6,9 @@
 <hibernate-configuration>
 <session-factory>
 <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ssjp_db</property>
-<property name="hibernate.connection.username">ssjp_da</property>
-<property name="hibernate.connection.password">12345678</property>
+<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/BinDown</property>
+<property name="hibernate.connection.username">dev</property>
+<property name="hibernate.connection.password">Computer01</property>
 <property name="hibernate.connection.pool_size">10</property>
 <property name="show_sql">true</property>
 <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -16,5 +16,7 @@
 
 <mapping class="net.ssjp.model.Employee" />
 <mapping class="net.ssjp.model.Hersteller" />
+<mapping class="net.ssjp.usermanagement.User" />
+<mapping class="net.ssjp.model.Country" />
 </session-factory>
 </hibernate-configuration>

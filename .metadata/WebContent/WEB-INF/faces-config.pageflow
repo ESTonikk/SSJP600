@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14969222096750" configfile="/SSJP600/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14969222096750" configfile="/SSJP600/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Login" id="pf14986430998958" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14986430998959 pf149864309989510 pf149864310754715 pf149864315838517 pf149864322572719" path="/login.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="loginError.xhtml" id="pf149864309989512" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14986430998959" path="/loginError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/index.xhtml" id="pf149864309989513" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf149864309989510" path="/faces/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/admin/index" id="pf149864310754716" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf149864310754715" path="/faces/admin/index.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/user/index" id="pf149864315838618" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf149864315838517" path="/faces/user/index.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/index" id="pf149864322572723" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf149864322572719" path="/faces/index.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="AdressView" id="pf149864327982624" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf149864327982625" path="AdressView.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/NewAdress" id="pf149864327982626" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf149864327982625" path="/pages/NewAdress.jsp"/>
+  <links id="pf14986430998959" target="pf149864309989512" source="pf14986430998958" outcome="failure"/>
+  <links id="pf149864309989510" target="pf149864309989513" source="pf14986430998958" outcome="success"/>
+  <links id="pf149864310754715" target="pf149864310754716" source="pf14986430998958" outcome="admin"/>
+  <links id="pf149864315838517" target="pf149864315838618" source="pf14986430998958" outcome="user"/>
+  <links id="pf149864322572719" target="pf149864322572723" source="pf14986430998958" outcome="logout"/>
+  <links id="pf149864327982625" target="pf149864327982626" source="pf149864327982624" outcome="NewAdress" redirect="true"/>
+</pageflow:Pageflow>

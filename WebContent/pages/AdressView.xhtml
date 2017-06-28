@@ -1,0 +1,35 @@
+<ui:composition template="/templates/layout.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+     <ui:define name="content">
+     <h:form>
+	     <p:dataTable var="address" value="#{dtHerstellerView.addr}">
+		    <p:column headerText="Id">
+		        <h:outputText value="#{address.id}" />
+		    </p:column>
+		    <p:column headerText="Name">
+		        <h:outputText value="#{address.name}" />
+		    </p:column>
+		    <p:column headerText="Country">
+		        <h:outputText value="#{address.country}" />
+		    </p:column>
+		    <p:column headerText="City">
+		        <h:outputText value="#{address.city}" />
+		    </p:column>
+		    <p:column headerText="Phone">
+		        <h:outputText value="#{address.phone}" />
+		    </p:column>
+		    <p:column headerText="Edit">
+	            <h:commandButton action = "#{dtHerstellerView.edit(address.id)}" type="Submit" value="Edit" class="btn btn-danger" />  
+	        </p:column>
+	        <p:column headerText="Delete">
+	            <h:commandButton action = "#{dtHerstellerView.delete(address.id)}" value="Delete" class="btn btn-danger" />  
+	        </p:column>
+		</p:dataTable>
+	</h:form>
+	</ui:define>
+</ui:composition>

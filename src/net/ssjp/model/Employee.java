@@ -8,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 /**
- * @author Deepak Kumar
- * Web: http://www.roseindia.net
  */
 @Entity
 @Table(name = "employee")
