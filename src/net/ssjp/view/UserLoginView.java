@@ -49,7 +49,8 @@ public class UserLoginView {
         FacesMessage message = null;
         boolean loggedIn = false;
         String site;
-        User usr = new User(this.getUsername());
+        User usr = new User();
+        usr.setUsername(this.getPassword1());
         if(this.getPasswordHex() == usr.getPassword()) {
             loggedIn = true;
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", this.getUsername());

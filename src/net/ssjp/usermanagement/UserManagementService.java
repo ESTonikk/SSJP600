@@ -61,7 +61,7 @@ public class UserManagementService {
         //we don't want to send the hashed password out in the json response
         userController.detach(user);
         user.setPassword(null);
-        user.setGroups(null);
+        //user.setGroups(null);
         return Response.ok().entity(json).build();
     }
  
@@ -97,7 +97,7 @@ public class UserManagementService {
             json.setStatus("FAILED");
             return Response.ok().entity(json).build();
         }
- 
+ /*
         User user = new User(newUser);
  
         List<Group> groups = new ArrayList<Group>();
@@ -105,10 +105,10 @@ public class UserManagementService {
         groups.add(Group.USER);
         groups.add(Group.DEFAULT);
         user.setGroups(groups);
- 
+ */
         //this could cause a runtime exception, i.e. in case the user already exists
         //such exceptions will be caught by our ExceptionMapper, i.e. javax.transaction.RollbackException
-        userController.save(user); // this would use the clients transaction which is committed after save() has finished
+       // userController.save(user); // this would use the clients transaction which is committed after save() has finished
         req.getServletContext().log("successfully registered new user: '" + newUser.getUserName() + "':'" + newUser.getPassword1() + "'");
  
         req.getServletContext().log("execute login now: '" + newUser.getUserName() + "':'" + newUser.getPassword1() + "'");

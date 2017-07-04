@@ -12,21 +12,23 @@
 </h:head>
 <h:body>
 
- <h:form method="post" action="j_security_check">
+ <form method="POST" action="j_security_check" class="login-form">
     <h:panelGrid columns="2">
-      <h:outputLabel for="j_username" value="Username" />
-      <input type="text" name="j_username" value="#{loginController.username}" />
+      <h:outputLabel for="j_username" value="username" />
+      <h:inputText id="j_username" />
 
-      <h:outputLabel for="j_password" value="Password" />
-      <input type="password" name="j_password" value="#{loginController.password}"/>
+      <h:outputLabel for="j_password" value="password" />
+      <h:inputSecret id="j_password" />
 
       <h:outputText value="" />
       <h:panelGrid columns="2">
-        <h:commandButton value="Submit" action="#{loginController.login}"/>
+        <input type="submit" name = "submit" value="Login"/>
+        <h:button outcome="index" value="Cancel" />
       </h:panelGrid>
     </h:panelGrid>
-  </h:form>
-  
+  </form>
+
+
 <h:form>
     <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
 

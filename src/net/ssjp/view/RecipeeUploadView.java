@@ -6,6 +6,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
 
 import net.ssjp.controller.RecipeeUploadController;
@@ -19,7 +20,7 @@ public class RecipeeUploadView extends FileUploaderView{
 	
 	
 	@Override
-	public void upload() {
+	public void upload(FileUploadEvent event) {
 		// TODO Auto-generated method stub
         if(getFile() != null) {
         	System.out.println(42342);

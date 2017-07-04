@@ -1,5 +1,9 @@
 package net.ssjp.controller;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -23,7 +27,7 @@ public class LoginController {
 		
 			log("login" + username);
 			System.out.println("login "+username);
-			request.login(this.username, this.password);
+			request.login(this.username, this.hashPassword(password));
 			if(request.isUserInRole("ADMIN"))
 				return "admin";
 			if(request.isUserInRole("USER"))
@@ -34,7 +38,6 @@ public class LoginController {
 			e.printStackTrace();
 			log("User "+username + " not able to log in", e);
 			getContext().addMessage(null, new FacesMessage("Login failed."));
-			getContext().addMessage(null, new FacesMessage(e.toString()));
 			return "failure";
 		}
 		return "success";
@@ -50,6 +53,24 @@ public class LoginController {
 		}
 		return "logout";
 	}
+	
+	public String hashPassword(String passwordPlanText) {
+        MessageDigest md;
+        try {
+            md = MessageDigest.getInstance("SHA-256");
+            byte[] output = md.digest(passwordPlanText.getBytes(StandardCharsets.UTF_8));
+
+            StringBuilder password = new StringBuilder();
+            for (byte anOutput : output) {
+                password.append(Integer.toString((anOutput & 0xff) + 0x100, 16).substring(1));
+            }
+            return password.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 	
 	private HttpSession getSession() {
 		return(HttpSession) getContext().getExternalContext().getSession(true);
