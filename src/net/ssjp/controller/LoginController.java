@@ -28,6 +28,7 @@ public class LoginController {
 			log("login" + username);
 			System.out.println("login "+username);
 			request.login(this.username, this.hashPassword(password));
+			
 			if(request.isUserInRole("ADMIN"))
 				return "admin";
 			if(request.isUserInRole("USER"))
@@ -78,6 +79,8 @@ public class LoginController {
 	private FacesContext getContext() {
 		return FacesContext.getCurrentInstance();
 	}
+	
+	
 	private HttpServletRequest getRequest() {
 		return (HttpServletRequest) getContext().getExternalContext().getRequest();
 	}

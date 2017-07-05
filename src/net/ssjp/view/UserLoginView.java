@@ -39,8 +39,39 @@ public class UserLoginView {
         this.password1 = password;
     }
     
+    public String logout(ActionEvent event){
+    	System.out.println("test");
+    	String site = "login.xhtml?faces-redirect=true";
+    	FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "logout complete", this.getUsername());
+    	FacesContext.getCurrentInstance().addMessage(null, message);
+    	return site; 
+    }
+    
     public String register(ActionEvent event){
     	String site = "";
+    	FacesMessage message = null;
+    	User usr = new User();
+    	usr.setUsername(this.getUsername());
+    	site = "login.xhtml?faces-redirect=true";
+    	try{
+    		if(usr.exists(this.getUsername())){
+        		message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Username already in use!", this.getUsername());
+        		
+        	}else if(!this.getPassword1().equals(this.getPassword2())){
+        		message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Passwords are not identical", this.getUsername());
+        		
+        	}else{
+        		usr.setPassword(this.getPasswordHex());
+        		message = new FacesMessage(FacesMessage.SEVERITY_INFO, "User created", this.getUsername());
+        		
+        	}
+        	
+    	}catch(Exception e){
+    		message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registration failed", this.getUsername());
+    		
+    	}
+    	
+    	FacesContext.getCurrentInstance().addMessage(null, message);
     	return site; 
     }
    
